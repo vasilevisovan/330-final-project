@@ -132,7 +132,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"admin@recipesite.com\",\n    \"password\": \"password\"\n}",
+							"raw": "{\n    \"email\": \"admin@recipesite.com\",\n    \"password\": \"passwordAdmin\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
