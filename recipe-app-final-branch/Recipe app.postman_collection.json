@@ -1,0 +1,686 @@
+{
+	"info": {
+		"_postman_id": "122bab07-0677-4b2a-8dac-aa5c36be2469",
+		"name": "Recipe app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29660313"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup - User 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"User 1\",\n    \"email\": \"user1@gmail.com\",\n    \"password\": \"user1pass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup - User 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"User 2\",\n    \"email\": \"user2@gmail.com\",\n    \"password\": \"user2pass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - User 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user1@gmail.com\",\n    \"password\": \"user1pass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - User 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user2@gmail.com\",\n    \"password\": \"user2pass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@recipesite.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ4MDFhNWMyZjY2ZWMyYTY2M2EiLCJlbWFpbCI6Im9saXZlcmRAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDIyNTAsImV4cCI6MTcxNzQ0NTg1MH0.yGfT-3gpEjS0litKf-r-rtB2MAdCAuU_JmGMoA6ET0U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"user1pass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All (Admin only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTMyY2NjZWNlMjZjN2MzOGU0NDIiLCJlbWFpbCI6ImFkbWluQHJlY2lwZXNpdGUuY29tIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNzQ0MjUxMywiZXhwIjoxNzE3NDQ2MTEzfQ.0SK9gQY7F2rmhJTxb_XKNy2ckoulmZ7whW67E150-Fc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ4MDFhNWMyZjY2ZWMyYTY2M2EiLCJlbWFpbCI6Im9saXZlcmRAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDIzNTMsImV4cCI6MTcxNzQ0NTk1M30.V_gcmNWm9TcJeWduXnMiUIfDIlSqByxZsWoHoLtkobg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ4MDFhNWMyZjY2ZWMyYTY2M2EiLCJlbWFpbCI6Im9saXZlcmRAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDIzNTMsImV4cCI6MTcxNzQ0NTk1M30.V_gcmNWm9TcJeWduXnMiUIfDIlSqByxZsWoHoLtkobg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/665e14971a5c2f66ec2a663d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"665e14971a5c2f66ec2a663d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ4MDFhNWMyZjY2ZWMyYTY2M2EiLCJlbWFpbCI6Im9saXZlcmRAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDIzNTMsImV4cCI6MTcxNzQ0NTk1M30.V_gcmNWm9TcJeWduXnMiUIfDIlSqByxZsWoHoLtkobg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Vasi V\",\n    \"profilePicture\": \"profilePicture.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipe",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ5NzFhNWMyZjY2ZWMyYTY2M2QiLCJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDM2NTQsImV4cCI6MTcxNzQ0NzI1NH0.ZkKanYl9g-nxzlGO84xMKrTHWiEsKdBRN7scoPSBMgo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Vegan Tacos\",\n    \"description\": \"Delicious and healthy vegan tacos filled with black beans, corn, and avocado.\",\n    \"ingredients\": [\n        \"Taco shells\",\n        \"Black beans\",\n        \"Corn\",\n        \"Avocado\",\n        \"Red onion\",\n        \"Tomatoes\",\n        \"Lettuce\",\n        \"Lime\",\n        \"Cilantro\",\n        \"Salt\",\n        \"Pepper\"\n    ],\n    \"instructions\": \"1. Heat the taco shells according to the package instructions. 2. In a bowl, mix black beans, corn, diced red onion, and chopped tomatoes. 3. Season the mixture with lime juice, salt, and pepper. 4. Fill the taco shells with the bean mixture. 5. Top with sliced avocado, shredded lettuce, and chopped cilantro. Serve immediately.\",\n    \"images\": \"https://example.com/images/vegan_tacos1.jpg\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/recipe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get recipes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/recipe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My recipies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ5NzFhNWMyZjY2ZWMyYTY2M2QiLCJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDM2NTQsImV4cCI6MTcxNzQ0NzI1NH0.ZkKanYl9g-nxzlGO84xMKrTHWiEsKdBRN7scoPSBMgo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/recipe/my",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipe",
+								"my"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get recipe by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/recipe/665e1c541a5c2f66e666",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipe",
+								"665e1c541a5c2f66e666"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ4MDFhNWMyZjY2ZWMyYTY2M2EiLCJlbWFpbCI6Im9saXZlcmRAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDQzODEsImV4cCI6MTcxNzQ0Nzk4MX0.aHd3RBiDuIa8l6tuyL9d5CYIN-dbyEA_PKpd6V0LVo4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Let's make Vegan Tacos\",\n    \"image\":\"newImageofVegantacos.jpg\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/recipe/665e1c541a5c2f66ec2a6657",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipe",
+								"665e1c541a5c2f66ec2a6657"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ4MDFhNWMyZjY2ZWMyYTY2M2EiLCJlbWFpbCI6Im9saXZlcmRAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDQzODEsImV4cCI6MTcxNzQ0Nzk4MX0.aHd3RBiDuIa8l6tuyL9d5CYIN-dbyEA_PKpd6V0LVo4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/recipe/665e1bf71a5c2f66ec2a6654",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipe",
+								"665e1bf71a5c2f66ec2a6654"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": \"Avocado\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/recipe/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipe",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Create comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ4MDFhNWMyZjY2ZWMyYTY2M2EiLCJlbWFpbCI6Im9saXZlcmRAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDQzODEsImV4cCI6MTcxNzQ0Nzk4MX0.aHd3RBiDuIa8l6tuyL9d5CYIN-dbyEA_PKpd6V0LVo4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"recipe\": \"665e1c541a5c2f66ec2a6657\",\n    \"text\": \"Thank you for sharing this Amazing Recipe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ4MDFhNWMyZjY2ZWMyYTY2M2EiLCJlbWFpbCI6Im9saXZlcmRAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDQzODEsImV4cCI6MTcxNzQ0Nzk4MX0.aHd3RBiDuIa8l6tuyL9d5CYIN-dbyEA_PKpd6V0LVo4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"This is a Masterpiece\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/comments/665e211c1a5c2f66ec2a6673",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"665e211c1a5c2f66ec2a6673"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlMTQ4MDFhNWMyZjY2ZWMyYTY2M2EiLCJlbWFpbCI6Im9saXZlcmRAZ21haWwuY29tIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTc0NDQzODEsImV4cCI6MTcxNzQ0Nzk4MX0.aHd3RBiDuIa8l6tuyL9d5CYIN-dbyEA_PKpd6V0LVo4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/comments/665e211c1a5c2f66ec2a6673",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"665e211c1a5c2f66ec2a6673"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comments by recipe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/comments/by-recipe/665e1bf71a5c2f66ec2a6654",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"by-recipe",
+								"665e1bf71a5c2f66ec2a6654"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
